@@ -4,20 +4,19 @@
  * Author: Nagy János
  * Github: https://github.com/andteki
  * Copyright (c) 2020-2022 Nagy János
+ * A programot módosította: Juhász Roland
+ * Szoft II N 2022-11-28
  * 
  * GNU GPL v2
  */
 
 package controllers;
 
-// osztály létrehozása
 public class CalcController {
-    /* Bemenő paraméterek a oldal és b oldal */
-    public static double calcPerimeter( double aSide, double bSide) {
-        return aSide + bSide; //összeadjuk a és b oldalt
-    } /* calcPerimeter vége */
+    
+    public static double calcPerimeter( double aSide, double bSide) 
+    {return aSide + bSide;} 
 
-    public static double calcArea(double aSide, double bSide) {
-        return aSide * bSide; //összeszorozzuk a és b oldalt
-    }/* calcArea vége */
+    public static double calcArea(double aSide, double bSide) 
+    {return aSide * bSide;}
 }

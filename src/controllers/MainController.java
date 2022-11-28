@@ -4,34 +4,45 @@
  * Author: Nagy János
  * Github: https://github.com/andteki
  * Copyright (c) 2020-2022 Nagy János
+ * A programot módosította: Juhász Roland
+ * Szoft II N 2022-11-28
  * 
  * GNU GPL v2
  */
 package controllers;
-
 import models.FileHandler;
 import views.MainWindow;
 
 public class MainController {
+
     MainWindow mainWindow;
-    public MainController() {
-        //itt kezdődik a konstruktor
+
+    public MainController() 
+    {
         this.mainWindow = new MainWindow();
-        this.mainWindow.calcButton.addActionListener(e -> {
+        this.mainWindow.calcButton.addActionListener(event -> {
             this.onClickCalcButton();
         });
-    }// a konstruktor vége
-    public void onClickCalcButton() {
-        double a = Double.parseDouble(this.mainWindow.asideField.getText());
-        double b = Double.parseDouble(this.mainWindow.bsideField.getText());
-        Double p = CalcController.calcPerimeter(a, b);
-        Double ar = CalcController.calcArea(a, b);
-        this.mainWindow.perimeterField.setText(p.toString());
-        this.mainWindow.areaField.setText(ar.toString());
-        String line = p.toString() + ":" + ar.toString();
-        FileHandler h = new FileHandler();
-        h.writeFile(line);
+    }
+    //TODO: névjegy megcsinálása: action listener a névjegyhez
+    //TODO: új adatok action: tegye alapértelmezettre a bemeneti értékeket, hogy újat tudjunk beírni
+
+    public void onClickCalcButton() 
+    {
+        double aSite = Double.parseDouble(this.mainWindow.asideField.getText());
+        double bSite = Double.parseDouble(this.mainWindow.bsideField.getText());
+        Double perimeter = CalcController.calcPerimeter(aSite, bSite);
+        Double area = CalcController.calcArea(aSite, bSite);
+
+        this.mainWindow.perimeterField.setText(perimeter.toString());
+        this.mainWindow.areaField.setText(area.toString());
+
+        String line = perimeter.toString() + " : " + area.toString();
+        FileHandler handler = new FileHandler();
+        handler.writeFile(line);
+
         //TODO: adatbázisba írás
+        
     }
     
 }

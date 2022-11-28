@@ -4,6 +4,8 @@
  * Author: Nagy János
  * Github: https://github.com/andteki
  * Copyright (c) 2020-2022 Nagy János
+ * A programot módosította: Juhász Roland
+ * Szoft II N 2022-11-28
  * 
  * GNU GPL v2
  */
@@ -15,10 +17,3 @@ public class App {
         new MainController();
     }
 }
-
-
-/*
- * 2020-09-15 Projekt alapja kész.
- * 2020-09-25 Átírva grafikus felületre.
- * 2020-10-21 Névjegy rész kész.
- */
